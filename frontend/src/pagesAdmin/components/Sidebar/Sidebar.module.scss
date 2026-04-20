@@ -1,0 +1,82 @@
+.sidebar {
+    width: 300px;
+    background-color: #669df5;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+.header{
+  display: flex;
+  width: 100%;
+  height: 150px;
+  justify-content:center;
+  align-items: center;
+}
+
+.avatar{
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  border: 1px solid rgba($color: #000000, $alpha: .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.logo-avatar{
+  height: 90%;
+  width: 90%;
+  border-radius: 50px;
+  border: 1px solid rgba($color: #000000, $alpha: .5);
+
+
+}
+
+.name-user{
+  font-size: 2.3rem;
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-shadow: 2px 2px 2px rgba($color: #4a4747, $alpha: .5);
+
+}
+
+.main{
+}
+
+.content-ul{
+  display: grid;
+
+}
+
+.content-li{
+  border: 1px solid rgba($color: #000000, $alpha: .6);
+  margin-top: 10px;
+  border-radius: 5px;
+  padding-left: 10px;
+  background-color: #fff;
+  color: #000000;
+  box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: .4);
+  height: 35px;
+  width:  100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.9rem;
+  font-weight: 500;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover{
+    transform: translateY(-2.5px);
+    box-shadow: 3px 3px 3px 3px rgba($color: #000000, $alpha: .2);
+  }
+  &:active{
+    transform: translateY(-.5px);
+    box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: .2);
+  }
+
+}
+.active{
+  background-color: #b0ebe8;
+}

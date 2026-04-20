@@ -1,0 +1,247 @@
+// src/components/AdminMain/AdminMainSettings/AdminMainSettings.module.scss
+
+$primary: #4f46e5;
+$primary-dark: #4338ca;
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-600: #4b5563;
+$gray-800: #1f2937;
+$success: #10b981;
+$error: #ef4444;
+
+.settings-wrapper {
+    padding: 3rem 2rem 7rem; // tăng padding lớn hơn
+    max-width: 1400px; // rộng hơn một chút
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.page-title {
+    font-size: 2.8rem; // to hơn
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, $primary, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.message {
+    padding: 1.25rem 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.settings-container {
+    display: flex;
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid $gray-200;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+    }
+}
+
+.tab-sidebar {
+    width: 320px; // sidebar rộng hơn
+    background: linear-gradient(180deg, $gray-50, white);
+    padding: 2.5rem 1.5rem;
+    border-right: 1px solid $gray-200;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        padding: 1.5rem;
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+    }
+}
+
+.tab-item {
+    width: 100%;
+    padding: 1.4rem 1.8rem; // to hơn
+    margin-bottom: 0.75rem;
+    border: none;
+    background: transparent;
+    text-align: left;
+    font-size: 1.15rem; // chữ tab to hơn
+    font-weight: 600;
+    color: $gray-600;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+        flex-shrink: 0;
+        padding: 1rem 1.8rem;
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        background: rgba($primary, 0.1);
+        color: $primary;
+    }
+
+    &.active {
+        background: rgba($primary, 0.15);
+        color: $primary;
+        font-weight: 700;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 70%;
+            background: $primary;
+            border-radius: 0 6px 6px 0;
+        }
+
+        @media (max-width: 1024px) {
+            &::before {
+                display: none;
+            }
+            border-bottom: 4px solid $primary;
+        }
+    }
+}
+
+.tab-content {
+    flex: 1;
+    padding: 3rem 3.5rem; // padding lớn hơn, thoáng hơn
+
+    @media (max-width: 768px) {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.section {
+    background: rgba(white, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 1.25rem;
+    padding: 2.5rem 3rem; // to hơn
+    margin-bottom: 3rem;
+    border: 1px solid rgba($gray-200, 0.7);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    h3 {
+        font-size: 1.9rem; // heading to hơn
+        font-weight: 700;
+        margin-bottom: 2.25rem;
+        color: $gray-800;
+
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     left: 0;
+        //     bottom: 0;
+        //     width: 80px;
+        //     height: 4px;
+        //     background: $primary;
+        //     border-radius: 3px;
+        // }
+    }
+}
+
+.form-group {
+    margin-bottom: 2.25rem; // khoảng cách lớn hơn
+
+    label {
+        position: absolute;
+        top: -0.8rem;
+        left: 1.5rem;
+        background: white;
+        padding: 0 0.75rem;
+        font-size: 1rem; // label to hơn
+        color: $gray-600;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        padding: 1.4rem 1.5rem; // input cao & rộng hơn
+        border: 1.5px solid $gray-200;
+        border-radius: 1rem;
+        font-size: 1.15rem; // chữ trong input to hơn
+        transition: all 0.25s ease;
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 5px rgba($primary, 0.15);
+        }
+    }
+
+    textarea {
+        min-height: 140px;
+    }
+
+    &.checkbox {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+
+        input {
+            width: 1.5rem;
+            height: 1.5rem;
+            accent-color: $primary;
+        }
+
+        label {
+            position: static;
+            background: none;
+            font-size: 1.15rem;
+            color: $gray-800;
+            cursor: pointer;
+        }
+    }
+}
+
+.save-bar {
+    position: sticky;
+    bottom: 2rem;
+    margin-top: 4rem;
+    text-align: right;
+    z-index: 10;
+}
+
+.btn-save {
+    background: linear-gradient(90deg, $primary, $primary-dark);
+    color: white;
+    padding: 1.3rem 3.5rem; // button to & rộng hơn
+    border: none;
+    border-radius: 3.5rem;
+    font-size: 1.25rem; // chữ button to hơn
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba($primary, 0.35);
+    transition: all 0.35s ease;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 45px rgba($primary, 0.45);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.loading {
+    text-align: center;
+    padding: 8rem 0;
+    font-size: 1.5rem;
+    color: $gray-600;
+}

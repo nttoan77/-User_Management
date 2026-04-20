@@ -1,0 +1,290 @@
+.wrapper {
+    padding: 4.5rem 1rem 6rem;
+    background: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 70% 20%, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    &.animate {
+        .skillCard,
+        .softCard {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4.5rem;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.6px;
+}
+
+/* ==================== CATEGORY TITLE ==================== */
+.category {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.8rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .categoryIcon {
+        font-size: 2.1rem;
+        color: #6366f1;
+    }
+}
+
+/* ==================== HARD SKILLS - CIRCLE PROGRESS ==================== */
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2.2rem 1.8rem;
+    justify-items: center;
+}
+
+.skillCard {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(50px);
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 40px rgba(99, 102, 241, 0.15);
+    }
+}
+
+.circleWrapper {
+    margin-bottom: 1.4rem;
+}
+
+.circle {
+    position: relative;
+    width: 148px;
+    height: 148px;
+    margin: 0 auto;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+    }
+
+    circle {
+        fill: none;
+        stroke-width: 13;
+        stroke-linecap: round;
+    }
+
+    .bg {
+        stroke: #e2e8f0;
+    }
+
+    .progress {
+        stroke: url(#grad);
+        stroke-dasharray: 314;
+        stroke-dashoffset: var(--offset);
+        transition: stroke-dashoffset 1.8s ease;
+    }
+}
+
+.percent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #6366f1;
+}
+
+.skillName {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 1rem 0 0.6rem;
+}
+
+.levelBadge {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    cursor: help;
+}
+
+/* Details tags */
+.details {
+    margin-top: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    justify-content: center;
+}
+
+.detailTag {
+    padding: 0.45rem 1rem;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: #475569;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(99, 102, 241, 0.18);
+        color: #4f46e5;
+    }
+}
+
+.noDetail {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* ==================== SOFT SKILLS ==================== */
+.softGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.softCard {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(50px);
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 38px rgba(139, 92, 246, 0.12);
+    }
+}
+
+.softHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.detailTag.soft {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: #6d28d9;
+}
+
+/* ==================== EMPTY STATE ==================== */
+.empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #64748b;
+    font-size: 1.3rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 5.5rem 2rem 7rem;
+    }
+
+    .skillsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        padding: 6rem 2.5rem 8rem;
+    }
+
+    .skillCard,
+    .softCard {
+        padding: 2.2rem 1.8rem;
+    }
+
+    .circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .percent {
+        font-size: 2.3rem;
+    }
+}
+
+/* MOBILE NHỎ */
+@media (max-width: 576px) {
+    .wrapper {
+        padding: 3.5rem 1rem 5rem;
+        border-radius: 16px;
+    }
+
+    .title {
+        font-size: 2.1rem;
+        margin-bottom: 3.5rem;
+    }
+
+    .category {
+        font-size: 1.75rem;
+    }
+
+    .circle {
+        width: 130px;
+        height: 130px;
+    }
+
+    .percent {
+        font-size: 1.85rem;
+    }
+
+    .skillName {
+        font-size: 1.3rem;
+    }
+
+    .skillsGrid,
+    .softGrid {
+        gap: 1.8rem;
+    }
+
+    .softCard {
+        padding: 1.8rem;
+    }
+}

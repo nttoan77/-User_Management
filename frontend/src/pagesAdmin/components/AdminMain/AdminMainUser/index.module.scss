@@ -1,0 +1,29 @@
+
+.tab-buttons{
+    padding: 10px;
+    }
+    
+    .tab-buttons-user,
+    .tab-buttons-delete{
+      margin: 5px;
+      padding: 8px;
+      border: 1px solid rgba($color: #000000, $alpha: .4);
+      border-radius: 8px;
+      font-size: 1.5rem;
+       font-weight: 600;
+       cursor: pointer;
+       transition: .3s;
+    
+       &:hover{
+       transform: translateY(-2px); 
+       }
+       &:active{
+       transform: translateY(-.5px); 
+    
+       }
+    }
+    .active{
+      background-color: #59d9b0;
+    
+    }
+      

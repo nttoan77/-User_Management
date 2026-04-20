@@ -1,0 +1,278 @@
+.trash {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem; // nhỏ gọn cho mobile
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    .title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        margin-bottom: 0.6rem;
+
+        .icon {
+            font-size: 2.4rem;
+            color: #6366f1;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+    }
+
+    .subtitle {
+        color: #6b7280;
+        font-size: 0.98rem;
+        line-height: 1.4;
+    }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 6rem 1.5rem;
+    color: #6b7280;
+
+    .empty-icon {
+        font-size: 6rem;
+        color: #9ca3af;
+        margin-bottom: 1.2rem;
+        opacity: 0.75;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        margin-bottom: 0.7rem;
+        color: #374151;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.trash-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f1f5f9;
+    transition: all 0.25s ease;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+    }
+
+    &.is-busy {
+        opacity: 0.65;
+        pointer-events: none;
+    }
+}
+
+.card-main {
+    .cv-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+        color: #111827;
+    }
+
+    .meta {
+        font-size: 0.88rem;
+        color: #6b7280;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}
+
+.actions {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column; // mobile: xếp dọc
+    gap: 0.8rem;
+
+    .btn {
+        padding: 0.8rem;
+        border-radius: 10px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+    }
+
+    .btn-restore {
+        background: #6366f1;
+        color: white;
+
+        &:hover:not(:disabled) {
+            background: #4f46e5;
+        }
+    }
+
+    .btn-delete {
+        background: #ef4444;
+        color: white;
+
+        &:hover:not(:disabled) {
+            background: #dc2626;
+        }
+    }
+
+    button:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(3px);
+    border-radius: 14px;
+    z-index: 5;
+}
+
+// Skeleton loading
+.loading {
+    padding: 3rem 0;
+}
+
+.skeleton-header {
+    height: 2.8rem;
+    width: 60%;
+    margin: 0 auto 2.5rem;
+    background: #e5e7eb;
+    border-radius: 10px;
+    animation: pulse 1.6s infinite;
+}
+
+.skeleton-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skeleton-card {
+    height: 130px;
+    background: #e5e7eb;
+    border-radius: 14px;
+    animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.55;
+    }
+}
+
+/* ───────────────────────────────────────────────
+   TABLET & LARGER (≥ 768px)
+──────────────────────────────────────────────── */
+@media (min-width: 768px) {
+    .trash {
+        padding: 2.5rem 2rem;
+    }
+
+    .header {
+        margin-bottom: 3.5rem;
+
+        .title-wrapper .icon {
+            font-size: 2.8rem;
+        }
+        .title-wrapper h1 {
+            font-size: 2.4rem;
+        }
+        .subtitle {
+            font-size: 1.05rem;
+        }
+    }
+
+    .empty-state {
+        padding: 8rem 3rem;
+
+        .empty-icon {
+            font-size: 7.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .trash-card {
+        padding: 1.6rem 2rem;
+    }
+
+    .card-main .cv-title {
+        font-size: 1.32rem;
+    }
+    .card-main .meta {
+        flex-direction: row;
+        gap: 1.2rem;
+    }
+
+    .actions {
+        flex-direction: row; // desktop: ngang
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    .btn {
+        min-width: 140px;
+        padding: 0.85rem 1.4rem;
+    }
+}
+
+/* ───────────────────────────────────────────────
+   DESKTOP LARGE (≥ 1024px) – gần giống thiết kế gốc
+──────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+    .trash {
+        max-width: 960px;
+        padding: 3rem 1.5rem;
+    }
+
+    .header {
+        margin-bottom: 4rem;
+
+        .title-wrapper h1 {
+            font-size: 2.6rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+        }
+    }
+
+    .trash-card {
+        padding: 1.8rem 2.2rem;
+    }
+
+    .actions {
+        gap: 1.2rem;
+    }
+}

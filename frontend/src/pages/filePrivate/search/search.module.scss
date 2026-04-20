@@ -1,0 +1,72 @@
+.search {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .searchBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  
+    &.focused {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+  
+    &.loading {
+      opacity: 0.8;
+    }
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #6b7280;
+  }
+  
+  .input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.9rem;
+    background: transparent;
+  
+    &::placeholder {
+      color: #9ca3af;
+    }
+  }
+  
+  .clearBtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: #9ca3af;
+    transition: 0.2s;
+  
+    &:hover {
+      color: #ef4444;
+    }
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d1d5db;
+    border-top: 2px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin-left: 8px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

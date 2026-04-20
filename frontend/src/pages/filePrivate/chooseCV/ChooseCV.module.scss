@@ -1,0 +1,311 @@
+.container {
+  min-height: 100vh;                // thay 120vh → tránh scroll thừa vô ích
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px 12px;               // nhỏ gọn mobile
+  position: relative;
+}
+
+/* ───────────────────────────────────────────────
+   HEADER & MAIN CONTENT – mobile first
+──────────────────────────────────────────────── */
+.main-content {
+  max-width: 1400px;                // tăng nhẹ để desktop rộng rãi hơn
+  margin: 0 auto;
+  padding: 0 8px;
+}
+
+.main-content-c {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0 30px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Header search + thùng rác */
+.main-content-header {
+  display: flex;
+  flex-direction: column;           // mobile: dọc
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search-cv {
+  width: 100%;                      // full width mobile
+}
+
+.delete-soft {
+  height: 44px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: #333;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: #f8f8f8;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Grid CV cards – mobile first: 1 cột */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr;       // mobile: 1 cột
+  gap: 20px;
+  padding: 0 8px;
+}
+
+.cv-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  }
+
+  &.create-new {
+    border: 3px dashed #764ba2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;              // đảm bảo chiều cao nhất định
+    background: rgba(255, 255, 255, 0.12);
+
+    .plus-icon {
+      font-size: 60px;
+      color: #764ba2;
+      margin-bottom: 16px;
+    }
+
+    h3, p {
+      color: white;
+      text-align: center;
+    }
+  }
+}
+
+.cv-preview {
+  height: 180px;                    // nhỏ hơn mobile để gọn
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .preview-placeholder {
+    font-size: 20px;
+    color: #888;
+    font-weight: bold;
+  }
+}
+
+.cv-info {
+  padding: 16px;
+  text-align: center;
+
+  h3 {
+    margin: 0 0 8px;
+    color: #222;
+    font-size: 1.35rem;
+  }
+
+  p {
+    color: #555;
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+
+  .updated-at {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 8px;
+    display: block;
+  }
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 16px;
+  color: white;
+
+  .empty-icon {
+    font-size: 70px;
+    margin-bottom: 16px;
+    opacity: 0.75;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin: 16px 0;
+  }
+
+  p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 32px;
+  }
+}
+
+.create-first-cv-btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
+  }
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: white;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.25);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ───────────────────────────────────────────────
+   TABLET (≥ 768px)
+──────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px 24px;
+  }
+
+  .main-content {
+    padding: 0 16px;
+  }
+
+  .main-content-c {
+    font-size: 2.6rem;
+    margin: 30px 0 40px;
+  }
+
+  .main-content-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+
+  .search-cv {
+    width: 55%;                   // chiếm phần lớn bên trái
+    max-width: 500px;
+  }
+
+  .delete-soft {
+    width: 160px;
+    font-size: 1.6rem;
+    right: auto;                  // reset nếu trước đó dùng position
+  }
+
+  .cv-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); // 2 cột trở lên
+    gap: 24px;
+    padding: 0;
+  }
+
+  .cv-preview {
+    height: 200px;
+  }
+
+  .cv-info {
+    padding: 20px;
+
+    h3 {
+      font-size: 1.45rem;
+    }
+  }
+}
+
+/* ───────────────────────────────────────────────
+   DESKTOP (≥ 1024px) – gần giống thiết kế gốc
+──────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .container {
+    padding: 24px 40px;
+  }
+
+  .main-content {
+    max-width: 1300px;            // rộng hơn tí
+  }
+
+  .main-content-c {
+    font-size: 3rem;
+  }
+
+  .search-cv {
+    width: 600px;                 // giữ nguyên như gốc
+  }
+
+  .delete-soft {
+    width: 180px;
+    font-size: 1.8rem;
+  }
+
+  .cv-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // 3–4 cột như gốc
+    gap: 30px;
+  }
+
+  .cv-preview {
+    height: 220px;                // to hơn desktop
+  }
+
+  .cv-card {
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .cv-info h3 {
+    font-size: 1.55rem;
+  }
+}

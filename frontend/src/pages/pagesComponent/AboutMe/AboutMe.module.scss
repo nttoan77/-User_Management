@@ -1,0 +1,179 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 5rem 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &.animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== PHẦN NỘI DUNG ==================== */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header {
+    margin-bottom: 0.5rem;
+}
+
+.jobTitle {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--theme-color, #1976d2);
+    line-height: 1.15;
+    margin: 0;
+
+    &.placeholder {
+        font-size: 2.2rem;
+        color: #aaa;
+    }
+}
+
+.textBox {
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: #333;
+}
+
+.text {
+    font-size: 1.35rem;
+    margin: 0;
+    white-space: pre-wrap;
+
+    &.noData {
+        color: #888;
+        font-style: italic;
+    }
+}
+
+.placeholderHint {
+    display: block;
+    margin-top: 1.2rem;
+    font-size: 0.97rem;
+    color: #777;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.website {
+    margin-top: 1rem;
+}
+
+.websiteLink {
+    color: var(--theme-color, #1976d2);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* ==================== PHẦN CANVAS (đang comment) ==================== */
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 420px;
+
+    @media (max-width: 992px) {
+        min-height: 320px;
+    }
+}
+
+/* ==================== LOADING ==================== */
+.loading {
+    text-align: center;
+    padding: 6rem 2rem;
+    color: #666;
+    font-size: 1.15rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/* TABLET & MOBILE - Base (≤ 992px) */
+@media (max-width: 992px) {
+    .wrapper {
+        grid-template-columns: 1fr; // chuyển thành 1 cột
+        gap: 3.5rem;
+        padding: 3.5rem 1.5rem;
+    }
+
+    .content {
+        text-align: center; // căn giữa nội dung trên mobile
+        gap: 1.8rem;
+    }
+
+    .jobTitle {
+        font-size: 2.3rem;
+    }
+
+    .text {
+        font-size: 1.25rem;
+        text-align: justify;
+    }
+
+    .placeholderHint {
+        font-size: 0.95rem;
+    }
+
+    /* Đưa Canvas lên trên cùng trên mobile */
+    .canvas {
+        order: -1;
+    }
+}
+
+/* MOBILE NHỎ (≤ 576px) */
+@media (max-width: 576px) {
+    .wrapper {
+        padding: 2.5rem 1rem;
+        gap: 2.8rem;
+    }
+
+    .jobTitle {
+        font-size: 2rem;
+    }
+
+    .text {
+        font-size: 1.18rem;
+    }
+
+    .textBox {
+        font-size: 1.1rem;
+    }
+
+    .websiteLink {
+        font-size: 1.05rem;
+    }
+}
+
+/* DESKTOP LỚN (≥ 1200px) - Tăng thêm không gian */
+@media (min-width: 1200px) {
+    .wrapper {
+        gap: 6rem;
+        padding: 6rem 0;
+    }
+
+    .jobTitle {
+        font-size: 3.2rem;
+    }
+
+    .text {
+        font-size: 1.45rem;
+    }
+}

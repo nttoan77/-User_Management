@@ -1,0 +1,16 @@
+.wrapper {
+    margin-top: 80px;        // giảm nhẹ để AboutMe sát hơn
+}
+
+.item {
+    scroll-margin-top: 100px;   // rất quan trọng: khi scroll đến section sẽ có khoảng đệm
+    margin-bottom: 100px;
+}
+
+/* Loading */
+.loading {
+    padding: 120px 20px 100px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #64748b;
+}

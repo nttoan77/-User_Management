@@ -1,0 +1,249 @@
+// Education.module.scss – Modern Minimal & Clean 2026 Style
+
+.wrapper {
+  padding: 100px 0 80px;
+  background: linear-gradient(to bottom, #f8f9ff 0%, #ffffff 100%);
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  svg {
+    color: var(--theme-color, #3b82f6);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+  }
+}
+
+/* Danh sách học vấn - dọc trái */
+.education-list {
+  position: relative;
+  padding-left: 50px;
+}
+
+/* Mỗi item */
+.education-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+
+  &:last-child .line {
+    display: none;
+  }
+}
+
+/* Điểm tròn + đường dọc */
+.marker {
+  position: absolute;
+  left: 0;
+  top: 28px;
+  width: 50px;
+  text-align: center;
+  z-index: 1;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 5px solid var(--theme-color, #3b82f6);
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.line {
+  position: absolute;
+  left: 9px;
+  top: 48px;
+  width: 2px;
+  height: calc(100% + 20px);
+  background: #e2e8f0;
+  z-index: 0;
+}
+
+/* Card chính */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  border: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border-color: var(--theme-color, #3b82f6);
+  }
+
+  &.expanded {
+    box-shadow: 0 20px 50px rgba(59, 130, 246, 0.12);
+    border-color: var(--theme-color, #3b82f6);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.school {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.degree {
+  font-size: 1.2rem;
+  color: var(--theme-color, #3b82f6);
+  font-weight: 600;
+  margin: 0;
+
+  .field {
+    color: #475569;
+    font-weight: 500;
+  }
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.chevron {
+  color: var(--theme-color, #3b82f6);
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Chi tiết mở rộng */
+.details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.5s ease, margin 0.5s ease;
+
+  &.expanded {
+    max-height: 1000px;
+    margin-top: 1.8rem;
+    padding-top: 1.8rem;
+    border-top: 1px solid #e2e8f0;
+  }
+}
+
+.description {
+  color: #475569;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+
+  svg {
+    color: var(--theme-color, #3b82f6);
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  strong {
+    color: #1e293b;
+    margin-right: 0.5rem;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.achievements-list {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+  color: #475569;
+  line-height: 1.7;
+
+  li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* No data */
+.noData {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #94a3b8;
+
+  .noDataIcon {
+    font-size: 4.5rem;
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-style: italic;
+    color: #64748b;
+  }
+}

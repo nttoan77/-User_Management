@@ -1,0 +1,196 @@
+// .form-container {
+//     margin: 20px 0;
+//     width: 650px;
+//   }
+  
+//   .file-input {
+//     margin-bottom: 15px;
+//     cursor: pointer;
+//   }
+  
+//   .preview-list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 10px;
+//   }
+  
+//   .preview-item {
+//     position: relative;
+//     min-width: calc(25% - 10px);
+//     height: 100px;
+//     border: 1px solid #ddd;
+//     border-radius: 6px;
+//     overflow: hidden;
+  
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+  
+//     .btn-remove {
+//       position: absolute;
+//       top: 3px;
+//       right: 3px;
+//       background: red;
+//       color: #fff;
+//       border: none;
+//       padding: 2px 6px;
+//       border-radius: 50%;
+//       cursor: pointer;
+//     }
+//   }
+  
+
+// ====================
+// =============================================
+// DESIGN TOKENS (giữ đồng bộ với file cha)
+// =============================================
+:root {
+  --primary: #3ae048;
+  --danger: #ef4444;
+  --border: #d1d5db;
+  --radius: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-container {
+  margin: 32px 0 40px 0;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 16px;
+  }
+}
+
+// =============================================
+// FILE INPUT (làm đẹp kiểu drag & drop hiện đại)
+// =============================================
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  background-color: #f9fafb;
+  font-size: 1.35rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    border-color: #3b82f6;
+    background-color: #f0f9ff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+}
+
+// =============================================
+// PREVIEW LIST
+// =============================================
+.preview-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+// =============================================
+// PREVIEW ITEM (Card style hiện đại)
+// =============================================
+.preview-item {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    border-color: #9ca3af;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    background: #f3f4f6;
+  }
+
+  .preview-name {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    color: #374151;
+    word-break: break-all;
+    text-align: center;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  // Nút xóa
+  .btn-remove {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+
+    &:hover {
+      background: #dc2626;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+// =============================================
+// RESPONSIVE
+// =============================================
+@media (max-width: 640px) {
+  .preview-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .preview-item {
+    height: 160px;
+
+    img {
+      height: 100px;
+    }
+  }
+}
