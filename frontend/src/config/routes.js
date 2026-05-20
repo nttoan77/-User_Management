@@ -13,6 +13,7 @@ const routes = {
     Forget:'/forget',
     ResetPassword:'/reset-Password',
     ChooseCV: '/choose-cv',
+    MyProfilePage:'/my-profile-page',
     RegisInformationUser:'/register-information-user',
 };
 

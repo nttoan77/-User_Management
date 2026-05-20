@@ -40,7 +40,7 @@ function Login({ setUser }) {
             if (!user.isProfileComplete) {
                 navigate('/register-information-user', { replace: true });
             } else {
-                navigate('/choose-cv', { replace: true });
+                navigate('/my-profile-page', { replace: true });
             }
         } catch (error) {
             console.error('Lỗi đăng nhập:', error);

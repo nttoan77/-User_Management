@@ -88,7 +88,8 @@ function RenderRoutes() {
                     element={
                         user ? (
                             user.isProfileComplete ? (
-                                <Navigate to="/choose-cv" replace />
+                                // <Navigate to="/choose-cv" replace />
+                                <Navigate to="/my-profile-page" replace />
                             ) : (
                                 <Navigate to="/register-information-user" replace />
                             )

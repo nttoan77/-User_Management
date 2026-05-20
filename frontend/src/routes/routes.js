@@ -15,6 +15,7 @@ import ChooseCV from '~/pages/filePrivate/chooseCV/ChooseCV';
 import RegisInformationUser from '~/pages/filePrivate/regisInformationUser/regisInformationUser';
 import EditCVInformation from '~/pages/filePrivate/editCV/editInformationCV';
 import Trash from '~/pages/pagesComponent/Trash/Trash';
+import MyProfilePage from '~/pages/filePrivate/myProfilePage/MyProfilePage';
 
 // Public routes
 const publicRoutes = [
@@ -29,7 +30,8 @@ const publicRoutes = [
 ];
 
 const privateRoutes = [
-    { path: config.routes.ChooseCV, component: ChooseCV, layout: null },
+    // { path: config.routes.ChooseCV, component: ChooseCV, layout: null },
+    { path: config.routes.MyProfilePage, component: MyProfilePage, layout: null },
     { path: config.routes.RegisInformationUser, component: RegisInformationUser, layout: null },
     { path: config.routes.editCV, component: EditCVInformation, layout: null },
     { path: config.routes.Admin, component: Admin, layout: null },

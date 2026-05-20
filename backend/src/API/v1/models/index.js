@@ -4,5 +4,5 @@ import UserProfile from "./UserProfile.js";
 
 import CV from "./CV.js";
 import Counter from "./Counter.js";
-
-export { User, CV, Counter ,UserProfile };
+import Functions from './Functions.js';
+export { User, CV, Counter ,UserProfile, Functions};

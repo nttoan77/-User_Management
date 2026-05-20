@@ -1,0 +1,121 @@
+.notes-section {
+    min-height: 100vh;
+    // background: #0a0a0a;
+    color: #0a0a0a;
+    padding: 32px 24px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        margin: 0;
+    }
+
+    .add-note-btn {
+        background: linear-gradient(135deg, #7b61ff, #a78bff);
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border-radius: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 20px rgba(123, 97, 255, 0.25);
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(123, 97, 255, 0.35);
+        }
+
+        &:active {
+            transform: scale(0.96);
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    }
+}
+
+/* Note List Container */
+:global(.note-list-container) {
+    // Nếu NoteList có class này
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .notes-section {
+        padding: 20px 16px;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Thêm style cho Empty State (nếu NoteList render empty) */
+.empty-state {
+    text-align: center;
+    padding: 100px 20px;
+    color: #888;
+
+    .icon {
+        font-size: 4.5rem;
+        margin-bottom: 20px;
+        opacity: 0.6;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        color: #ddd;
+    }
+}
+
+/* Glassmorphism Card Style (dùng cho Note Card nếu bạn muốn áp dụng) */
+.note-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(16px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-8px);
+        border-color: rgba(123, 97, 255, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .pinned {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        color: #fbbf24;
+    }
+}

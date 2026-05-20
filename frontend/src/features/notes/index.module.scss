@@ -1,0 +1,211 @@
+/* src/features/notes/styles/notes.scss */
+
+.notes-section {
+    padding: 24px;
+    background-color: #f8fafc;
+    min-height: 100vh;
+  }
+  
+  .notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+  
+    h2 {
+      margin: 0;
+      color: #1e2937;
+      font-size: 1.75rem;
+    }
+  
+    .add-note-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s;
+  
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+  }
+  
+  .notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+  }
+  
+  .note-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+  
+    &.pinned {
+      border-color: #eab308;
+      
+      &::after {
+        content: "📌";
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        font-size: 20px;
+      }
+    }
+  
+    .note-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e2937;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+  
+    .note-content {
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 0.98rem;
+    }
+  
+    .note-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+  
+      .tag {
+        background-color: #e0f2fe;
+        color: #0369a1;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+    }
+  
+    .note-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #64748b;
+  
+      .note-date {
+        font-style: italic;
+      }
+  
+      .note-actions {
+        display: flex;
+        gap: 12px;
+  
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 1.1rem;
+          padding: 4px;
+          border-radius: 4px;
+          transition: all 0.2s;
+  
+          &:hover {
+            background-color: #f1f5f9;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Modal Form */
+  .note-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 520px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+  
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+  
+      h3 {
+        margin: 0;
+      }
+  
+      .close-btn {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #64748b;
+      }
+    }
+  
+    .form-group {
+      margin-bottom: 18px;
+  
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #374151;
+      }
+  
+      input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 1rem;
+  
+        &:focus {
+          outline: none;
+          border-color: #3b82f6;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+      }
+  
+      textarea {
+        min-height: 140px;
+        resize: vertical;
+      }
+    }
+  
+    .tags-input {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+  }

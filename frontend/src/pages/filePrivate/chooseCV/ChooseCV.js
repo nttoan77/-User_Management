@@ -285,7 +285,7 @@ function ChooseCV() {
 
     return (
         <div className={cx('container')}>
-            <HeaderChooseCV />
+           
 
             <div className={cx('main-content')}>
                 <h1 className={cx('main-content-c')}>Hồ sơ CV của bạn</h1>

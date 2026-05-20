@@ -8,13 +8,22 @@ import DefaultLayout from '~/layouts/defaultLayout';
 import { Fragment } from 'react';
 
 // ================= GUARDS =================
+// const GuestOnly = () => {
+//     const { user } = useAuth();
+//     if (user) {
+//         return <Navigate to={user?.isProfileComplete ? config.ChooseCV : config.RegisInformationUser} replace />;
+//     }
+//     return <Outlet />;
+// };
+
 const GuestOnly = () => {
     const { user } = useAuth();
     if (user) {
-        return <Navigate to={user?.isProfileComplete ? config.ChooseCV : config.RegisInformationUser} replace />;
+        return <Navigate to={user?.isProfileComplete ? config.MyProfilePage : config.RegisInformationUser} replace />;
     }
     return <Outlet />;
 };
+
 
 const Protected = ({ children }) => {
     const { user } = useAuth();
@@ -22,10 +31,17 @@ const Protected = ({ children }) => {
     return children ?? <Outlet />;
 };
 
+// const NeedProfile = () => {
+//     const { user } = useAuth();
+//     const isComplete = user?.isProfileComplete === true;
+//     if (isComplete) return <Navigate to={config.ChooseCV} replace />;
+//     return <Outlet />;
+// };
+
 const NeedProfile = () => {
     const { user } = useAuth();
     const isComplete = user?.isProfileComplete === true;
-    if (isComplete) return <Navigate to={config.ChooseCV} replace />;
+    if (isComplete) return <Navigate to={config.MyProfilePage} replace />;
     return <Outlet />;
 };
 

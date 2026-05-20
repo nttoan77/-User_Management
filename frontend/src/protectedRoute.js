@@ -23,7 +23,8 @@ export default function ProtectedRoute({ children }) {
     const selectedCVId = localStorage.getItem('selectedCVId');
 
     if (requiresCV && !selectedCVId) {
-        return <Navigate to="/choose-cv" replace />;
+        // return <Navigate to="/choose-cv" replace />;
+        return <Navigate to="/my-profile-page" replace />;
     }
 
     return children;

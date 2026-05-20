@@ -109,11 +109,11 @@ function HeaderChooseCV({classnames}) {
                         )}
                     </div>
 
-                    <p className={cx('welcome-text')}>
+                    {/* <p className={cx('welcome-text')}>
                         {user?.isProfileComplete
                             ? 'Chọn một CV để bắt đầu hành trình ứng tuyển nào!'
                             : 'Vui lòng hoàn thiện hồ sơ để tiếp tục!'}
-                    </p>
+                    </p> */}
                 </div>
             </div>
 

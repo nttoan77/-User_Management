@@ -54,7 +54,8 @@ function AppRoutes() {
                     user ? (
                         <Navigate to="/login" state={{ from: location }} replace />
                     ) : (
-                        <Navigate to="/choose-cv" replace />
+                        // <Navigate to="/choose-cv" replace />
+                        <Navigate to="/my-profile-page" replace />
                     )
                 }
             />
