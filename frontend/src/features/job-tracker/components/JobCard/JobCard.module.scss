@@ -1,0 +1,211 @@
+.job-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    border-color: #7b61ff;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(123, 97, 255, 0.1);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.company {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e2937;
+  margin: 0;
+}
+
+.position {
+  color: #64748b;
+  margin: 4px 0 0;
+  font-size: 1rem;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.info {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highlight {
+  color: #8b5cf6;
+  font-weight: 500;
+}
+
+.note {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 16px;
+  border-left: 4px solid #7b61ff;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+
+  button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .edit-btn {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+
+    &:hover {
+      background: #e0e7ff;
+    }
+  }
+
+  .delete-btn {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+
+    &:hover {
+      background: #fecaca;
+    }
+  }
+}.job-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    border-color: #7b61ff;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(123, 97, 255, 0.1);
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.company {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e2937;
+  margin: 0;
+}
+
+.position {
+  color: #64748b;
+  margin: 4px 0 0;
+  font-size: 1rem;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.info {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highlight {
+  color: #8b5cf6;
+  font-weight: 500;
+}
+
+.note {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 16px;
+  border-left: 4px solid #7b61ff;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+
+  button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .edit-btn {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+
+    &:hover {
+      background: #e0e7ff;
+    }
+  }
+
+  .delete-btn {
+    background: #fee2e2;
+    color: #ef4444;
+    border: none;
+
+    &:hover {
+      background: #fecaca;
+    }
+  }
+}

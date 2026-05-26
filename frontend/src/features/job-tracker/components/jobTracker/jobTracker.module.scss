@@ -1,0 +1,149 @@
+.job-tracker {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.header {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1e2937;
+  }
+
+  p {
+    color: #64748b;
+    margin: 4px 0 0;
+    font-size: 1.05rem;
+  }
+}
+
+/* ==================== THỐNG KÊ ==================== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: white;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  span {
+    display: block;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 6px;
+  }
+
+  strong {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e2937;
+  }
+
+  &.success strong {
+    color: #10b981;
+  }
+}
+
+/* ==================== FILTER BAR ==================== */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  background: white;
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background: #f1f5f9;
+  }
+
+  &.active {
+    background: #7b61ff;
+    color: white;
+  }
+}
+
+/* ==================== DANH SÁCH JOB ==================== */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+// btn
+
+.add-btn{
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background-color: #10b981;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffff;
+  cursor: pointer;
+
+  &:hover{
+    transform: translateY(-2px);
+    background-color: #6df0c4;
+  }
+  &:active{
+    transform: translateY(-0.5px);
+    background-color: #65e8bc;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .job-tracker {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

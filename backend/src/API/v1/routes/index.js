@@ -3,6 +3,7 @@ import userRoutes from "./routes.js"; // route cho user
 import adminRoutes from "./adminRouter.js"; // route cho admin
 import CVRouter from "./CVRouter.js"; // router cho cv
 import NoteRouter from "./noteRouter.js";
+import TrackSchedule from "./trackScheduleRouter.js"
 
 const router = express.Router();
 
@@ -11,5 +12,6 @@ router.use("/admin/users", adminRoutes); // /api/auth/Admin/users...
 router.use("/auth", userRoutes); // /api/auth/...
 router.use("/cv", CVRouter); // /api/cv/..
 router.use("/notes", NoteRouter); // /api/notes/..
+router.use("/TrackSchedules", TrackSchedule); // /api/TrackSchedule/..
 
 export default router;

@@ -20,5 +20,14 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 
     overflow-x: hidden; 
-    overflow-y: auto;    
+    overflow-y: auto;   
+    /* Ẩn thanh cuộn */
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE & Edge */
+
+  &::-webkit-scrollbar {
+    display: none;                 /* Chrome, Safari, Edge */
+    width: 0;
+    height: 0;
+  } 
 }

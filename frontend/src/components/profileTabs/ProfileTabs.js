@@ -21,6 +21,12 @@ function ProfileTabs({ activeTab, onTabChange }) {
                 >
                     Ghi chú
                 </button>
+                <button
+                    className={cx('tab', { active: activeTab === 'jobTracker' })}
+                    onClick={() => onTabChange('jobTracker')}
+                >
+                    lịch trình cv
+                </button>
             </div>
         </div>
     );

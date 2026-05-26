@@ -7,6 +7,7 @@ import styles from './MyProfilePage.module.scss';
 import ChooseCV from '../chooseCV/ChooseCV';
 import ProfileTabs from '~/components/profileTabs/ProfileTabs';
 import NotesSection from '~/features/notes/components/NotesSection/NotesSection';
+import JobTracker from '~/features/job-tracker/components/jobTracker/JobTracker';
 import HeaderChooseCV from '../chooseCV/headerChooseCV/hearderChooseCV';
 
 const cx = classNames.bind(styles);
@@ -35,6 +36,7 @@ function MyProfilePage() {
                 <div className={cx('content-area')}>
                     {activeTab === 'cv' && <ChooseCV />}
                     {activeTab === 'notes' && <NotesSection />}
+                    {activeTab === 'jobTracker' && <JobTracker />}
                 </div>
             </div>
         </div>
